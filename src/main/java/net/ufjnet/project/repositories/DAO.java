@@ -8,7 +8,6 @@ import net.ufjnet.project.models.Model;
 
 public interface DAO extends JpaRepository<Model, Integer> {
 
-	public Optional<Model> findByName(String name);
 	public Optional<Model> findByEmail(String email);
 	
 }

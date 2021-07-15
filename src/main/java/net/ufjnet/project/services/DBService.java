@@ -27,7 +27,6 @@ public class DBService {
 		Model result = dao.findById(id).orElseThrow(() -> new BusinessException("Registros não encontrados!!!"));
 		
 		return new DTO(result);
-
 	}
 	
 	@Transactional(readOnly = true)
@@ -36,7 +35,6 @@ public class DBService {
 				.orElseThrow(() -> new BusinessException("Registros não encontrados!!!"));
 		
 		return new DTO(result);
-		
 	}
 	
 	@Transactional
