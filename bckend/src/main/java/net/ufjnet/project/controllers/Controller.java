@@ -39,7 +39,7 @@ public class Controller {
 
 		Direction sortDirection = "desc".equalsIgnoreCase(direction) ? Direction.DESC : Direction.ASC;
 
-		Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "name"));
+		Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "id"));
 
 		Page<DTO> pages = service.FindAll(pageable);
 		pages
