@@ -39,6 +39,13 @@ public class DBService {
 	
 	@Transactional
 	public DTO Save(DTO obj) {
+		if (obj.getEmail().isBlank() || obj.getEmail().isEmpty()) {
+			throw new BusinessException("O campo e-mail não pode estar vazio!");
+		}
+		if (obj.getName().isBlank() || obj.getEmail().isEmpty()) {
+			throw new BusinessException("O campo nome não pode estar vazio!");
+		}
+		
 		Model entity = new Model(obj.getId(), obj.getName(), obj.getEmail());
 		
 		boolean emailExists = dao.findByEmail(obj.getEmail()).stream().anyMatch(objResult -> !objResult.equals(obj));
